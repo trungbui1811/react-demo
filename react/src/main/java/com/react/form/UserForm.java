@@ -1,24 +1,11 @@
-package com.react.model;
+package com.react.form;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "USERS")
-public class User {
-	@SequenceGenerator(name = "userIdSeq", sequenceName = "USER_ID_SEQ", allocationSize = 1)
-    @Id
-    @Column(name = "USER_ID", unique = true, nullable = false)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userIdSeq")
-    private Long userId;
-	@Column(name = "FULL_NAME")
+public class UserForm {
+	private Long userId;
     private String fullName;
-	@Column(name = "USER_NAME")
     private String userName;
-	@Column(name = "CELLPHONE")
     private String cellphone;
-	@Column(name = "EMAIL")
     private String email;
-	
 	public Long getUserId() {
 		return userId;
 	}
@@ -49,4 +36,5 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+    
 }
